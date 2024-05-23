@@ -1,17 +1,23 @@
 import Header from "@/components/AnimeList/header"
 import AnimeList from "../components/AnimeList"
-import { getAnimeResponse } from "../libs/api-libs"
+import { getAnimeResponse, getNestedAnimeResponse, reproduce } from "../libs/api-libs"
 
 const Page = async () => {
     const topAnime = await getAnimeResponse("top/anime", "limit=10")
+    let recommendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry")
+    recommendedAnime = reproduce(recommendedAnime, 5)
 
   return (
     <>
     {/* Anime Terpopuler */}
-      <div>
+      <section>
         <Header title="Paling Populer" linkTitle="Lihat Semua"  linkHref="/populer"/>
         <AnimeList api={topAnime} />
-      </div>
+      </section>
+      <section>
+        <Header title="Rekomendasi" />
+        <AnimeList api={recommendedAnime} />
+      </section>
     </>
   )
 }

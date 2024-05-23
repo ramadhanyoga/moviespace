@@ -11,8 +11,9 @@ const InputSearch = () => {
     /* Untuk hendle inputan button*/
     const heandleSearch = (event) => {
         const keyword = searchRef.current.value
-
-        if(!keyword) return;
+        
+        //logic agar tidak bisa di klik saat kosong/hanya spasi
+        if(!keyword || keyword.trim() == "") return;
         /*validasi untuk tombol enter*/
         if(event.key === "Enter" || event.type === "click") {
             event.preventDefault()
