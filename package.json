@@ -10,16 +10,19 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.5",
-    "next": "13.5.5",
+    "@prisma/client": "^5.14.0",
+    "eslint-config-next": "^14.2.3",
+    "next": "^14.2.3",
     "next-auth": "^4.24.7",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-youtube": "^10.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10",
     "nodemon": "^3.1.0",
     "postcss": "^8",
+    "prisma": "^5.14.0",
     "tailwindcss": "^3"
   }
 }
